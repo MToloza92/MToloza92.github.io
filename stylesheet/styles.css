@@ -1,0 +1,108 @@
+/**Pantone**/
+:root {
+  --oro-japones: #E0AC46;
+  --beige-luz: #FAEAB2;
+  --beige-oscuro: #A59C7D;
+  --azul-profundo: #1B303A;
+  --rojo-terracota: #CC5636;
+  --marrón-medio: #755E4C;
+  --blanco-roto: #F5F5F5;
+  --negro-suave: #121212;
+  --sombra-suave: rgba(0, 0, 0, 0.4);
+}
+
+/**Clases utilitarias**/
+.u-flex { display: flex; }
+.u-center { justify-content: center; align-items: center; align-content: center;}
+.u-column { flex-direction: column; }
+.u-text-center { text-align: center; }
+.u-shadow { box-shadow: 0 0 1rem var(--sombra-suave); }
+.u-rounded { border-radius: 1rem; }
+.u-padding-2 { padding: 2rem; }
+.u-margin-2 { margin: 2rem; }
+
+/**Base**/
+body {
+  font-family: 'Noto Serif', serif;
+  background: url('../assets/images/background.jpg') no-repeat center bottom / cover fixed;
+  color: var(--blanco-roto);
+  margin: 0;
+  min-height: 100vh;
+  position: relative;
+}
+
+body::before {
+  content: "";
+  position: fixed;
+  inset: 0;
+  background: rgba(27, 48, 58, 0.25);
+  mix-blend-mode: multiply;
+  z-index: -1;
+}
+
+/**Secciones**/
+.c_navbar {
+  background-color: var(--azul-profundo);
+  border-bottom: 0.2rem solid var(--beige-oscuro);
+  padding: 1rem 2rem;
+  flex-wrap: wrap;
+  gap: 1rem;
+  justify-content: space-between;
+}
+.c_navbar-logo {
+  width: 10rem;
+  height: 5rem;
+  object-fit: cover;
+  border-radius: 10%;
+}
+
+.c_navbar-list {
+  display: flex;
+  gap: 1rem;
+  list-style: none;
+  margin: 0;
+}
+
+.c_navbar-list a {
+  background-color: var(--beige-luz);
+  color: var(--negro-suave);
+  font-weight: bold;
+  padding: 0.75rem 1.5rem;
+  border-radius: 0.5rem;
+  border: 2px solid var(--marrón-medio);
+  text-decoration: none;
+  transition: 0.3s;
+  text-transform: uppercase;
+  font-size: 0.9rem;
+}
+
+.c_navbar-list a:hover {
+  background-color: var(--marrón-medio);
+  color: var(--blanco-roto);
+  box-shadow: 0 0 1rem var(--oro-japones);
+  transform: translateY(-3px);
+  border-color: var(--oro-japones);
+}
+
+.c_inicio {
+  align-content: center;
+  flex-wrap: wrap;
+  align-items: center
+}
+
+.c_inicio-imagen {
+  max-width: 15rem;
+  height: 15rem;
+  border-radius: 50%;
+}
+
+/**Responsive**/
+@media (max-width: 768px) {
+  .c_navbar-list {
+    flex-direction: column;
+    align-items: center;
+  }
+  h1 {
+    font-size: 2rem;
+  }
+}
