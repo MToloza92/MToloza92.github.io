@@ -1,79 +1,143 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Toloza | Portafolio</title>
-  <link rel="stylesheet" href="./stylesheet/reset.css">
+  
+  <!-- Fuentes y Estilos -->
+  <link rel="stylesheet" href="./stylesheet/reset.css" />
+  <link rel="stylesheet" href="./stylesheet/styles.css" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Serif&display=swap" rel="stylesheet" />
+
 </head>
 <body>
-
+  <header>
+    <!-- Navbar -->
+    <nav class="c_navbar u-flex u-center">
+      <img src="./assets/images/logotoloza.png" alt="Logo de Toloza" class="c_navbar-logo" />
+       <!-- Botón hamburguesa -->
+    <div id="toggle-menu" class="c_navbar-toggle">
+      ☰
+    </div>
+      <ul id="navbar-list" class="c_navbar-list">
+        <li><a href="#proyectos">Proyectos</a></li>
+        <li><a href="#habilidades">Habilidades</a></li>
+        <li><a href="#contacto">Contacto</a></li>
+      </ul>
+    </nav>
+  </header>
   <!-- Inicio -->
-  <section id="inicio">
-    <h1>Hola, soy Toloza</h1>
-    <p>Analista Programador</p>
+  <section id="inicio" class="c_inicio u-flex u-column u-text-center u-padding-2">
+    <img src="./assets/images/foto inicio.png" alt="Foto de Inicio" class="c_inicio-imagen u-shadow u-rounded u-flex" />
+    <h2>Soy Mauricio Toloza</h2>
+    <p>
+      Desarrollador Full Stack con enfoque en soluciones claras, útiles y bien pensadas.
+      Me apasiona aprender, crear y compartir. Este es mi espacio: ¡te invito a conocerlo!
+    </p>
   </section>
 
   <!-- Proyectos -->
-  <section id="proyectos">
+  <section id="proyectos" class="c_proyectos u-flex u-column u-text-center u-padding-2">
     <h2>Proyectos</h2>
-    <p>...</p>
+    <p>Próximamente...</p>
   </section>
 
   <!-- Habilidades -->
-  <section id="habilidades">
-    <h2>Habilidades</h2>
-    
-    <div id="frontend">
-      <h3>Frontend</h3>
-      <ul>
-        <li>HTML</li>
-        <li>CSS</li>
-        <li>JavaScript</li>
-        <li>...</li>
-        <!-- Agrega más -->
-      </ul>
-    </div>
+<section id="habilidades" class="c_habilidades u-flex u-column u-text-center u-margin-2 u-padding-2">
+  <h2>Habilidades</h2>
 
-    <div id="backend">
-      <h3>Backend</h3>
-      <ul>
-        <li>Python</li>
-        <li>...</li>
-        <!-- Agrega más -->
-      </ul>
-    </div>
+    <!-- Frontend -->
+  <div>
+    <h3 class="u-margin-2">Frontend</h3>
+    <ul class="u-flex u-center u-gap-2 wrap">
+      <li class="skill-item">
+        <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/html5/html5-original.svg"  alt="HTML5" class="svg_img svg_effect" />
+        <div class="progress html" style="--level: 75;"><span>HTML</span></div>
+      </li>
+      <li class="skill-item">
+        <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/css3/css3-original.svg"  alt="CSS3" class="svg_img svg_effect" />
+        <div class="progress css" style="--level: 70;"><span>CSS</span></div>
+      </li>
+      <li class="skill-item">
+        <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/javascript/javascript-original.svg"  alt="JavaScript" class="svg_img svg_effect" />
+        <div class="progress js" style="--level: 30;"><span>JavaScript</span></div>
+      </li>
+      <li class="skill-item">
+        <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/vuejs/vuejs-original.svg"  alt="Vue.js" class="svg_img svg_effect" />
+        <div class="progress vue" style="--level: 10;"><span>Vue.js</span></div>
+      </li>
+      <li class="skill-item">
+        <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/angularjs/angularjs-original.svg"  alt="Angular" class="svg_img svg_effect" />
+        <div class="progress angular" style="--level: 10;"><span>Angular</span></div>
+      </li>
+    </ul>
+  </div>
 
-    <div id="bases-de-datos">
-      <h3>Bases de Datos</h3>
-      <ul>
-        <li>MySQL</li>
-        <li>Oracle</li>
-        <li>MongoDB</li>
-        <!-- Agrega más -->
-      </ul>
-    </div>
+    <!-- Backend -->
+  <div>
+    <h3 class="u-margin-2">Backend</h3>
+    <ul class="u-flex u-center u-gap-2 wrap">
+      <li class="skill-item">
+        <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/python/python-original.svg"  alt="Python" class="svg_img svg_effect" />
+        <div class="progress python" style="--level: 50;"><span>Python</span></div>
+      </li>
+      <li class="skill-item">
+        <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/nodejs/nodejs-original.svg"  alt="Node.js" class="svg_img svg_effect" />
+        <div class="progress node" style="--level: 10;"><span>Node.js</span></div>
+      </li>
+    </ul>
+  </div>
 
-    <div id="otros">
-      <h3>Otros</h3>
-      <ul>
-        <li>Metodologias Agile</li>
-        <li>Git</li>
-        <li>GitHub</li>
-        <!-- Agrega más -->
-      </ul>
-    </div>
-  </section>
+    <!-- Bases de Datos -->
+  <div>
+    <h3 class="u-margin-2">Bases de Datos</h3>
+    <ul class="u-flex u-center u-gap-2 wrap">
+      <li class="skill-item">
+        <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/mysql/mysql-original.svg"  alt="MySQL" class="svg_img svg_effect" />
+        <div class="progress mysql" style="--level: 75;"><span>MySQL</span></div>
+      </li>
+      <li class="skill-item">
+        <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/oracle/oracle-original.svg"  alt="Oracle" class="svg_img svg_effect" />
+        <div class="progress oracle" style="--level: 80;"><span>Oracle</span></div>
+      </li>
+      <li class="skill-item">
+        <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/mongodb/mongodb-original.svg"  alt="MongoDB" class="svg_img svg_effect" />
+        <div class="progress mongodb" style="--level: 80;"><span>MongoDB</span></div>
+      </li>
+    </ul>
+  </div>
+
+    <!-- Otros -->
+  <div>
+    <h3 class="u-margin-2">Otros</h3>
+    <ul class="u-flex u-center u-gap-2 wrap">
+      <li class="skill-item">
+        <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/jira/jira-original.svg"  alt="Jira (Scrum)" class="svg_img svg_effect" />
+        <div class="progress agile" style="--level: 80;"><span>Metodologías Agile</span></div>
+      </li>
+      <li class="skill-item">
+        <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/git/git-original.svg"  alt="Git" class="svg_img svg_effect" />
+        <div class="progress git" style="--level: 80;"><span>Git</span></div>
+      </li>
+      <li class="skill-item">
+        <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/github/github-original.svg"  alt="GitHub" class="svg_img svg_effect" />
+        <div class="progress github" style="--level: 90;"><span>GitHub</span></div>
+      </li>
+    </ul>
+  </div>
+</section>
 
   <!-- Contacto -->
-  <footer id="contacto">
+  <footer id="contacto" class="section u-text-center">
     <h3>Contacto</h3>
-    <p>Mtoloza92@gmail.com 
-      <br>
+    <p>
+      Mtoloza92@gmail.com<br />
       +56 9 9388 3963
-
     </p>
   </footer>
-
+<script src="./scripts/script.js"></script>
 </body>
 </html>

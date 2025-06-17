@@ -1,0 +1,238 @@
+/**Pantone**/
+:root {
+  --oro-japones: #E0AC46;
+  --beige-luz: #FAEAB2;
+  --beige-oscuro: #A59C7D;
+  --azul-profundo: #1B303A;
+  --rojo-terracota: #CC5636;
+  --marrón-medio: #755E4C;
+  --blanco-roto: #F5F5F5;
+  --negro-suave: #121212;
+  --sombra-suave: rgba(0, 0, 0, 0.4);
+}
+
+/**Clases utilitarias**/
+.u-flex { display: flex; }
+.u-center { justify-content: center; align-items: center; align-content: center;}
+.u-column { flex-direction: column; }
+.u-text-center { text-align: center; }
+.u-shadow { box-shadow: 0 0 1rem var(--sombra-suave); }
+.u-rounded { border-radius: 1rem; }
+.u-padding-2 { padding: 2rem; }
+.u-margin-2 { margin: 2rem; }
+.u-gap-2 { gap: 2rem; }
+
+/**Base**/
+body {
+  font-family: 'Noto Serif', serif;
+  background: url('../assets/images/background.jpg') no-repeat center bottom / cover fixed;
+  color: var(--blanco-roto);
+  margin: 0;
+  min-height: 100vh;
+  position: relative;
+}
+/**Filtro background**/
+body::before {
+  content: "";
+  position: fixed;
+  inset: 0;
+  background: rgba(27, 48, 58, 0.25);
+  mix-blend-mode: multiply;
+  z-index: -1;
+}
+
+/**Componentes**/
+
+  /**navbar**/
+  .c_navbar-toggle {
+  display: none;
+  font-size: 2rem;
+  cursor: pointer;
+  color: var(--oro-japones);
+  margin-left: auto;
+}
+.c_navbar {
+  background: image-set();
+  background-color: var(--azul-profundo);
+  border-bottom: 0.2rem solid var(--beige-oscuro);
+  padding: 1rem 2rem;
+  flex-wrap: wrap;
+  gap: 1rem;
+  justify-content: space-between;
+}
+.c_navbar-logo {
+  width: 12rem;
+  height: 4rem;
+  object-fit:contain;
+  border-radius: 10%;
+}
+
+.c_navbar-list {
+  display: flex;
+  gap: 1rem;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.c_navbar-list a {
+  background-color: var(--beige-luz);
+  color: var(--negro-suave);
+  font-weight: bold;
+  padding: 0.75rem 1.5rem;
+  border-radius: 0.5rem;
+  border: 2px solid var(--marrón-medio);
+  text-decoration: none;
+  transition: 0.3s;
+  text-transform: uppercase;
+  font-size: 0.9rem;
+}
+
+.c_navbar-list a:hover {
+  background-color: var(--rojo-terracota);
+  color: var(--blanco-roto);
+  box-shadow: 0 0 1rem var(--oro-japones);
+  transform: translateY(-3px);
+  border-color: var(--oro-japones);
+}
+  /**inicio**/
+.c_inicio {
+  align-content: center;
+  flex-wrap: wrap;
+  align-items: center
+}
+
+.c_inicio-imagen {
+  max-width: 15rem;
+  height: 15rem;
+  border-radius: 50%;
+}
+
+  /**habilidades**/
+  
+  /**svg_habilidades**/
+.svg_img {
+  width: 4rem;
+  height: 4rem;
+  margin: 1rem;
+  gap: 2rem;
+
+}
+
+.svg_effect {
+  width: 4rem;
+  height: 4rem;
+  transition: all 0.3s ease;
+  filter: drop-shadow(0 2px 4px rgba(27, 48, 58, 0.2)); /* Sombra sutil */
+}
+
+.svg_effect:hover {
+  transform: translateY(-3px);
+  opacity: 1;
+  filter: drop-shadow(0 0 8px rgba(224, 172, 70, 0.4)); /* Brillo dorado al hover */
+}
+/* Contenedor habilidad */
+.skill-item {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  width: 6rem;
+}
+
+/* Barra de progreso */
+.progress {
+  margin-top: 1rem;
+  height: 2rem;
+  width: 100%;
+  background-color: rgba(255, 255, 255, 0.2);
+  border-radius: 1rem;
+  overflow: hidden;
+  position: relative;
+  font-size: 0.8rem;
+  font-weight: bold;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--blanco-roto);
+}
+
+/** Relleno dinámico (puedes ajustar el ancho según tu nivel) **/
+.progress::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 100%;
+  width: calc(var(--level) * 1%); /** ← Aquí usamos la variable **/
+  background-color: currentColor;
+  z-index: -1;
+  
+}
+
+/* Colores tecnología */
+.html::before { color: #E34F26; }
+.css::before { color: #264DE4; }
+.js::before { color: #F7DF1E; }
+.vue::before { color: #4FC08D; }
+.angular::before { color: #DD0031; }
+
+.python::before { color: #3776AB; }
+.node::before { color: #69AA21; }
+
+.mysql::before { color: #00758F; }
+.oracle::before { color: #F80000; }
+.mongodb::before { color: #47A248; }
+
+.git::before { color: #F05032; }
+.github::before { color: #ffffff; }
+.agile::before { color: #007ACC; }
+
+/* Texto oscuro si fondo es claro */
+.progress.github,
+.progress.js {
+  color: #121212;
+}
+
+/**Responsive**/
+@media (max-width: 768px) {
+  .c_navbar {
+    flex-direction: flex-start;
+    align-items: center;
+  }
+  h1 {
+    font-size: 2rem;
+  }
+  .c_navbar-toggle {
+    display: block;
+  }
+
+  .c_navbar-list {
+    display: none;
+    flex-direction: column;
+    gap: 1rem;
+    margin-top: 1rem;
+    width: 100%;
+    text-align: center;
+  }
+
+  .c_navbar-list.active {
+    display: flex;
+    animation: fadeIn 0.3s ease-in-out forwards;
+  }
+
+  @keyframes fadeIn {
+    from {
+      opacity: 0;
+      transform: translateY(-10px);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+}
+
+
+
+
