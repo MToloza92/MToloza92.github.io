@@ -1,19 +1,22 @@
-/**Pantone**/
+/*Paleta de colores*/
 :root {
-  --oro-japones: #E0AC46;
-  --beige-luz: #FAEAB2;
-  --beige-oscuro: #A59C7D;
-  --azul-profundo: #1B303A;
-  --rojo-terracota: #CC5636;
-  --marrón-medio: #755E4C;
-  --blanco-roto: #F5F5F5;
-  --negro-suave: #121212;
-  --sombra-suave: rgba(0, 0, 0, 0.4);
+  --negro-violeta-profundo: #0e0613;
+  --morado-oscuro: #361643;
+  --fucsia-magenta-apagado: #772b78;
+  --naranja-electrico-suave: #fc7d4f;
+  --rosado-intenso-ciberpunk: #b02a60;
+  --oscuro-con-tintes-rojos: #170a1c;
+  --claro-con-toque-azulado: #f0f4ff;
+  --sombra-suave: rgba(0, 0, 0, 0.3);
+  --violeta-oscuro-rojizo: #2a112f;
+  --fondo-bg: #030007;
 }
 
-/**Clases utilitarias**/
+
+
+/* Clases utilitarias */
 .u-flex { display: flex; }
-.u-center { justify-content: center; align-items: center; align-content: center;}
+.u-center { justify-content: center; align-items: center; align-content: center; }
 .u-column { flex-direction: column; }
 .u-text-center { text-align: center; }
 .u-shadow { box-shadow: 0 0 1rem var(--sombra-suave); }
@@ -22,130 +25,122 @@
 .u-margin-2 { margin: 2rem; }
 .u-gap-2 { gap: 2rem; }
 
-/**Base**/
+/* Base */
 body {
-  font-family: 'Noto Serif', serif;
-  background: url('../assets/images/background.jpg') no-repeat center bottom / cover fixed;
-  color: var(--blanco-roto);
   margin: 0;
-  min-height: 100vh;
-  position: relative;
+  font-family: 'Segoe UI', sans-serif;
+  background-color: var(--fondo-bg);
+  color: var(--claro-con-toque-azulado);
 }
-/**Filtro background**/
-body::before {
+/* hero */
+.c_hero {
+  background: url(../assets/images/background-img.jpg) center / cover;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+    position: relative;
+    z-index: 1;
+    flex-wrap: wrap;
+}
+
+.c_hero::before {
   content: "";
-  position: fixed;
+  position: absolute;
   inset: 0;
-  background: rgba(27, 48, 58, 0.25);
-  mix-blend-mode: multiply;
+  background: rgba(0, 0, 0, 0.2); /* filtro oscuro */
   z-index: -1;
 }
 
-/**Componentes**/
 
-  /**navbar**/
-  .c_navbar-toggle {
+/* Navbar */
+.c_navbar {
+  padding: 1.5rem 2.5rem;
+  align-items: center;
+  background-color: transparent;
+  justify-content: space-between;
+}
+
+.c_navbar-logo {
+  font-family: "The Nautigal", cursive;
+  font-size: 4rem;
+  color: var(--claro-con-toque-azulado);
+  margin: 0;
+  justify-content: left;
+}
+
+.c_navbar-toggle {
   display: none;
   font-size: 2rem;
   cursor: pointer;
-  color: var(--oro-japones);
+  color: var(--rosado-intenso-ciberpunk);
   margin-left: auto;
 }
-.c_navbar {
-  background: image-set();
-  background-color: var(--azul-profundo);
-  border-bottom: 0.2rem solid var(--beige-oscuro);
-  padding: 1rem 2rem;
-  flex-wrap: wrap;
-  gap: 1rem;
-  justify-content: space-between;
-}
-.c_navbar-logo {
-  width: 12rem;
-  height: 4rem;
-  object-fit:contain;
-  border-radius: 10%;
+body.menu-open .c_hero {
+  background-image: none;
+  background-color: #2a112f; 
+  backdrop-filter: blur(3px);
+  transition: background 0.4s ease;
 }
 
+
 .c_navbar-list {
+  font-family: "Bebas Neue", sans-serif;
   display: flex;
-  gap: 1rem;
+  gap: 2rem;
   list-style: none;
   margin: 0;
   padding: 0;
+  font-size: 1.3rem;
 }
 
 .c_navbar-list a {
-  background-color: var(--beige-luz);
-  color: var(--negro-suave);
-  font-weight: bold;
-  padding: 0.75rem 1.5rem;
-  border-radius: 0.5rem;
-  border: 2px solid var(--marrón-medio);
-  text-decoration: none;
-  transition: 0.3s;
-  text-transform: uppercase;
-  font-size: 0.9rem;
+  position: relative;
+  color: var(--claro-con-toque-azulado);
+  transition: color 0.5s ease, opacity 0.3s ease;
+}
+
+
+.c_navbar-list:hover a {
+  opacity: 0.5;
 }
 
 .c_navbar-list a:hover {
-  background-color: var(--rojo-terracota);
-  color: var(--blanco-roto);
-  box-shadow: 0 0 1rem var(--oro-japones);
-  transform: translateY(-3px);
-  border-color: var(--oro-japones);
-}
-  /**inicio**/
-.c_inicio {
-  align-content: center;
-  flex-wrap: wrap;
-  align-items: center
+  opacity: 1;
 }
 
-.c_inicio-imagen {
-  max-width: 15rem;
-  height: 15rem;
-  border-radius: 50%;
+.c_hero_title-h1 {
+  font-family: "Bebas Neue", sans-serif;
+  font-size: 8rem;
+  color: var(--claro-con-toque-azulado);
+  text-align: center;
+  margin-top: 2rem;
 }
 
-  /**habilidades**/
-  
-  /**svg_habilidades**/
 .svg_img {
   width: 4rem;
   height: 4rem;
   margin: 1rem;
   gap: 2rem;
-
+  transition: all 0.3s ease;
 }
 
 .svg_effect {
-  width: 4rem;
-  height: 4rem;
   transition: all 0.3s ease;
-  filter: drop-shadow(0 2px 4px rgba(27, 48, 58, 0.2)); /* Sombra sutil */
+  filter: drop-shadow(0 2px 4px rgba(27, 48, 58, 0.2));
 }
 
 .svg_effect:hover {
   transform: translateY(-3px);
   opacity: 1;
-  filter: drop-shadow(0 0 8px rgba(224, 172, 70, 0.4)); /* Brillo dorado al hover */
-}
-/* Contenedor habilidad */
-.skill-item {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  text-align: center;
-  width: 6rem;
+  filter: drop-shadow(0 0 10px var(--naranja-electrico-suave));
 }
 
-/* Barra de progreso */
 .progress {
   margin-top: 1rem;
   height: 2rem;
   width: 100%;
-  background-color: rgba(255, 255, 255, 0.2);
+  background-color: rgba(255, 255, 255, 0.1);
   border-radius: 1rem;
   overflow: hidden;
   position: relative;
@@ -154,85 +149,89 @@ body::before {
   display: flex;
   align-items: center;
   justify-content: center;
-  color: var(--blanco-roto);
+  color: var(--claro-con-toque-azulado);
 }
 
-/** Relleno dinámico (puedes ajustar el ancho según tu nivel) **/
 .progress::before {
   content: "";
   position: absolute;
   top: 0;
   left: 0;
   height: 100%;
-  width: calc(var(--level) * 1%); /** ← Aquí usamos la variable **/
+  width: calc(var(--level) * 1%);
   background-color: currentColor;
   z-index: -1;
-  
 }
 
-/* Colores tecnología */
+/* Texto legible sobre barras claras */
+.progress span {
+  z-index: 2;
+  position: relative;
+  text-shadow: 0 0 2px #000; /* borde negro sutil */
+}
+
+/* Si quieres cambiar texto claro en barras claras */
+.progress.github span,
+.progress.js span {
+  color: #121212;
+  text-shadow: none;
+}
+
+/* Colores adaptados al pantone */
 .html::before { color: #E34F26; }
 .css::before { color: #264DE4; }
-.js::before { color: #F7DF1E; }
+.js::before { color: #f0f4ff; }
 .vue::before { color: #4FC08D; }
 .angular::before { color: #DD0031; }
-
 .python::before { color: #3776AB; }
 .node::before { color: #69AA21; }
-
 .mysql::before { color: #00758F; }
 .oracle::before { color: #F80000; }
 .mongodb::before { color: #47A248; }
-
 .git::before { color: #F05032; }
-.github::before { color: #ffffff; }
+.github::before { color: var(--claro-con-toque-azulado); }
 .agile::before { color: #007ACC; }
 
-/* Texto oscuro si fondo es claro */
-.progress.github,
-.progress.js {
-  color: #121212;
-}
 
-/**Responsive**/
+/* Responsive */
 @media (max-width: 768px) {
   .c_navbar {
-    flex-direction: flex-start;
-    align-items: center;
+    align-items: flex-start; /* importante */
+    display: contents;
   }
-  h1 {
-    font-size: 2rem;
+
+  .c_navbar-logo {
+    display: none;
   }
+
   .c_navbar-toggle {
-    display: block;
+    display: flex;
+    margin-top: 2rem;
+    margin-right: 2rem;
   }
 
   .c_navbar-list {
     display: none;
     flex-direction: column;
-    gap: 1rem;
-    margin-top: 1rem;
+    gap: 4rem;
+    align-items: center;
     width: 100%;
-    text-align: center;
+    transition: color 0.3s ease, opacity 0.8s ease;
   }
+
+  .c_navbar-list:hover a {
+  opacity: 0.5;
+  }
+  .c_navbar-list a:hover {
+  opacity: 1;
+  }
+  
+  
 
   .c_navbar-list.active {
     display: flex;
-    animation: fadeIn 0.3s ease-in-out forwards;
-  }
-
-  @keyframes fadeIn {
-    from {
-      opacity: 0;
-      transform: translateY(-10px);
-    }
-    to {
-      opacity: 1;
-      transform: translateY(0);
-    }
   }
 }
-
 
 
 
