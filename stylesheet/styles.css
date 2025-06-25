@@ -84,6 +84,7 @@ body.menu-open .c_hero {
 }
 
 
+
 .c_navbar-list {
   font-family: "Bebas Neue", sans-serif;
   display: flex;
@@ -124,7 +125,10 @@ body.menu-open .c_hero {
   gap: 2rem;
   transition: all 0.3s ease;
 }
+/*para los h3**/
+.c_habilidades_h3 {
 
+}
 .svg_effect {
   transition: all 0.3s ease;
   filter: drop-shadow(0 2px 4px rgba(27, 48, 58, 0.2));
@@ -162,6 +166,7 @@ body.menu-open .c_hero {
   background-color: currentColor;
   z-index: -1;
 }
+
 
 /* Texto legible sobre barras claras */
 .progress span {
