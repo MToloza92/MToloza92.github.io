@@ -11,6 +11,25 @@
   --violeta-oscuro-rojizo: #2a112f;
   --fondo-bg: #030007;
 }
+@font-face {
+  font-family: 'Bebas Neue';
+  src: url('../assets/fonts/BebasNeue-Regular.ttf') format('truetype');
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'The Nautigal';
+  src: url('../assets/fonts/TheNautigal-Regular.ttf') format('truetype');
+  font-weight: 400;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'The Nautigal';
+  src: url('../assets/fonts/TheNautigal-Bold.ttf') format('truetype');
+  font-weight: 700;
+  font-display: swap;
+}
 
 
 
@@ -22,15 +41,26 @@
 .u-shadow { box-shadow: 0 0 1rem var(--sombra-suave); }
 .u-rounded { border-radius: 1rem; }
 .u-padding-2 { padding: 2rem; }
-.u-margin-2 { margin: 2rem; }
+.u-margin-1 { margin: 1rem; }
 .u-gap-2 { gap: 2rem; }
-
+.u-wrap { flex-wrap: wrap; }
+.u-border { border: 0.3rem solid var(--oscuro-con-tintes-rojos); }
 /* Base */
 body {
   margin: 0;
   font-family: 'Segoe UI', sans-serif;
   background-color: var(--fondo-bg);
   color: var(--claro-con-toque-azulado);
+}
+.c_section-background {
+  background-color: var(--negro-violeta-profundo);
+  border-radius: 0.5rem;
+  padding: 1rem;
+  
+  
+}
+.c_h3-background {
+
 }
 /* hero */
 .c_hero {
@@ -117,6 +147,9 @@ body.menu-open .c_hero {
   text-align: center;
   margin-top: 2rem;
 }
+/*para los h3**/
+.c_habilidades_h3 {
+}
 
 .svg_img {
   width: 4rem;
@@ -125,10 +158,9 @@ body.menu-open .c_hero {
   gap: 2rem;
   transition: all 0.3s ease;
 }
-/*para los h3**/
-.c_habilidades_h3 {
 
-}
+
+
 .svg_effect {
   transition: all 0.3s ease;
   filter: drop-shadow(0 2px 4px rgba(27, 48, 58, 0.2));
@@ -154,6 +186,7 @@ body.menu-open .c_hero {
   align-items: center;
   justify-content: center;
   color: var(--claro-con-toque-azulado);
+  z-index: 1;
 }
 
 .progress::before {
@@ -162,7 +195,7 @@ body.menu-open .c_hero {
   top: 0;
   left: 0;
   height: 100%;
-  width: calc(var(--level) * 1%);
+  width: calc(var(--level) * 1%) !important;
   background-color: currentColor;
   z-index: -1;
 }
@@ -197,6 +230,71 @@ body.menu-open .c_hero {
 .github::before { color: var(--claro-con-toque-azulado); }
 .agile::before { color: #007ACC; }
 
+/* Estilos para los iconos */
+.contacto-style {
+  display: flex;
+  align-items: center;
+  gap: 0.7rem;
+  margin: 0.5rem ;
+}
+
+.contacto-style i {
+  width: 1.5rem;
+  text-align: center;
+  color: var(--rosado-intenso-ciberpunk);
+}
+
+.contacto-style a {
+  color: var(--claro-con-toque-azulado);
+  text-decoration: none;
+  transition: color 0.3s ease;
+}
+
+.contacto-style a:hover {
+  color: var(--rosado-intenso-ciberpunk);
+}
+
+/* Animación solo en hover 
+
+fa-bounce (rebote)
+fa-beat (latido/palpitar)
+fa-fade (desvanecer)
+fa-flip (volteo)
+fa-shake (sacudir)
+fa-spin (rotación continua)*/
+
+.fa-bounce-hover {
+  transition: all 0.5s ease;
+}
+
+.contacto-style:hover .fa-bounce-hover {
+  animation: fa-bounce 1s infinite;
+}
+
+/* Personalización de la animación */
+@keyframes fa-bounce {
+  0% { transform: scale(1); }
+  25% { transform: scale(1.2); }
+  50% { transform: scale(1); }
+  75% { transform: scale(1.1); }
+  100% { transform: scale(1); }
+}
+.copyright {
+  padding: 1rem 0;
+  font-size: 0.9rem;
+  color: var(--claro-con-toque-azulado);
+  opacity: 0.8;
+  border-top: 1px solid var(--morado-oscuro);
+}
+
+.copyright:hover {
+  opacity: 1;
+}
+
+.copyright i {
+  font-size: 0.8rem;
+  margin-right: 0.3rem;
+}
 
 /* Responsive */
 @media (max-width: 768px) {

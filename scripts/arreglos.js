@@ -1,5 +1,10 @@
 export const frontend = [
   {
+    nombre: "ErrorSkill",
+    imagen: "urlCorrupta",
+    porcentaje: 200
+  },
+  {
     nombre: "HTML5",
     imagen: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/html5/html5-original.svg",
     porcentaje: 75
