@@ -16,31 +16,27 @@ async function renderHabilidades(habilidades, containerId) {
   container.classList.add("u-flex", "u-center", "u-gap-2", "u-wrap");
 
   for (const skill of habilidades) {
-    const li = document.createElement("ul");
-
     try {
-      const img = await cargarImagen(skill.imagen);
+      const img = await cargarImagen(skill.imagen); // intenta cargar la imagen
+
+      const li = document.createElement("ul");
       img.alt = skill.nombre;
       img.classList.add("svg_img", "svg_effect");
       li.appendChild(img);
+
+      const progress = document.createElement("div");
+      progress.classList.add("progress");
+      progress.style.setProperty("--level", skill.porcentaje);
+      progress.innerHTML = `<span>${skill.nombre}</span>`;
+
+      li.appendChild(progress);
+      container.appendChild(li);
+
     } catch (error) {
-      console.error(error.message);
-      const fallback = document.createElement("span");
-      fallback.textContent = `❌ ${skill.nombre}`;
-      fallback.style.color = "crimson";
-      li.appendChild(fallback);
+      console.error(`⚠️ Falló ${skill.nombre}: ${error.message}`);
     }
-
-    const progress = document.createElement("div");
-    progress.classList.add("progress");
-    progress.style.setProperty("--level", skill.porcentaje);
-    progress.innerHTML = `<span>${skill.nombre}</span>`;
-
-    li.appendChild(progress);
-    container.appendChild(li);
   }
 }
-
 
 // Renderizar cada bloque
 renderHabilidades(frontend, "frontend");
