@@ -43,6 +43,8 @@
 .u-padding-2 { padding: 2rem; }
 .u-margin-1 { margin: 1rem; }
 .u-gap-2 { gap: 2rem; }
+.u-gap-3 { gap: 3rem; }
+
 .u-wrap { flex-wrap: wrap; }
 .u-border { border: 0.3rem solid var(--oscuro-con-tintes-rojos); }
 /* Base */
@@ -139,6 +141,21 @@ body.menu-open .c_hero {
 .c_navbar-list a:hover {
   opacity: 1;
 }
+.c_hero-foto {
+  width: 300px;
+  height: 300px;
+  border-radius: 50%;
+  overflow: hidden;
+  position: relative;
+  margin: 0 auto;
+}
+
+.c_foto-perfil {
+  width: 115%;
+  height: 115%;
+  object-fit: cover;
+  object-position: center 28%;
+}
 
 .c_hero_title-h1 {
   font-family: "Bebas Neue", sans-serif;
@@ -152,10 +169,10 @@ body.menu-open .c_hero {
 }
 
 .svg_img {
-  width: 4rem;
-  height: 4rem;
-  margin: 1rem;
-  gap: 2rem;
+  width: 5rem;
+  height: 5rem;
+  margin: 2rem;
+  gap: 4rem;
   transition: all 0.3s ease;
 }
 
@@ -173,14 +190,14 @@ body.menu-open .c_hero {
 }
 
 .progress {
-  margin-top: 1rem;
+  margin-top: 2rem;
   height: 2rem;
   width: 100%;
   background-color: rgba(255, 255, 255, 0.1);
   border-radius: 1rem;
   overflow: hidden;
   position: relative;
-  font-size: 0.8rem;
+  font-size: 1rem;
   font-weight: bold;
   display: flex;
   align-items: center;

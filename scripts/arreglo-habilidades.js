@@ -1,7 +1,7 @@
 export const frontend = [
   {
     nombre: "ErrorSkill",
-    imagen: "urlCorrupta",
+    imagen: "log de prueba de fallo en arreglo-habiliades por url corrupta",
     porcentaje: 200
   },
   {
@@ -17,17 +17,19 @@ export const frontend = [
   {
     nombre: "JavaScript",
     imagen: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/javascript/javascript-original.svg",
-    porcentaje: 30
+    porcentaje: 50
+    
+
   },
-  {
+  /*{
     nombre: "Vue.js",
     imagen: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/vuejs/vuejs-original.svg",
     porcentaje: 10
-  },
+  },*/
   {
     nombre: "Angular",
     imagen: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/angularjs/angularjs-original.svg",
-    porcentaje: 10
+    porcentaje: 40
   }
 ];
 
@@ -40,8 +42,12 @@ export const backend = [
   {
     nombre: "Node.js",
     imagen: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/nodejs/nodejs-original.svg",
-    porcentaje: 10
-  }
+    porcentaje: 30
+  },
+  {nombre: "Django",
+    imagen: "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/django/django-plain.svg",
+    porcentaje: 40
+  },
 ];
 
 export const bases_datos = [

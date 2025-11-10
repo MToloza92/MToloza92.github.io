@@ -1,4 +1,4 @@
-import { frontend, backend, bases_datos, otros } from './arreglos.js';
+import { frontend, backend, bases_datos, otros } from './arreglo-habilidades.js';
 // Funcion que rettorna proomesa al cargar imagen
 function cargarImagen(src) {
   return new Promise((resolve, reject) => {
@@ -13,7 +13,7 @@ function cargarImagen(src) {
 
 async function renderHabilidades(habilidades, containerId) {
   const container = document.getElementById(containerId);
-  container.classList.add("u-flex", "u-center", "u-gap-2", "u-wrap");
+  container.classList.add("u-flex", "u-center", "u-gap-3", "u-wrap");
 
   for (const skill of habilidades) {
     try {
