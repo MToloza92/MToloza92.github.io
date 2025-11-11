@@ -167,6 +167,80 @@ body.menu-open .c_hero {
 /*para los h3**/
 .c_habilidades_h3 {
 }
+.project-image {
+  border-radius: 1.2rem;
+  object-fit: cover;
+  object-position: center;
+  width: 100%;
+  height: 100%;
+}
+.project-card{
+  width: 25rem;
+  height: 20rem;
+  perspective: 1000px;
+}
+
+.project-inner {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  transition: transform 1s;
+  transform-style: preserve-3d;
+}
+
+.project-card:hover .project-inner {
+  transform: rotateY(180deg);
+}
+
+.project-front{
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  backface-visibility: hidden;
+  border-radius: 1.2rem;
+  box-shadow: 0 3px 10px rgba(0, 0, 0, 0.3);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.project-back {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  backface-visibility: hidden;
+  border-radius: 1.2rem;
+  color: var(--claro-con-toque-azulado);
+  padding: 2rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+}
+
+.project-back {
+  transform: rotateY(180deg);
+  text-align: center;
+}
+
+.project-back p {
+  font-size: 0.9rem;
+  margin-bottom: 10px;
+}
+
+.project-back a {
+  color: var(--claro-con-toque-azulado);
+  text-decoration: none;
+  font-weight: bold;
+  border: 1px solid var(--naranja-electrico-suave);
+  padding: 5px 10px;
+  border-radius: 6px;
+  transition: background-color 0.2s;
+}
+
+.project-back a:hover {
+  background-color: var(--sombra-suave);
+  color: #fff;
+}
 
 .svg_img {
   width: 5rem;
